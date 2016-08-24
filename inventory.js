@@ -26,7 +26,7 @@ var searchInventory= function(){
   console.log( 'looking for something ' + selectedColor + " and " + selectedSize);
   // check if item fits description
   for( var i =0; i<inventory.length; i++){
-    if(inventory[i].size == selectedSize && inventory[i].color == selectedColor){
+    if(inventory[i].size.toUpperCase() == selectedSize.toUpperCase() && inventory[i].color.toUpperCase() == selectedColor.toUpperCase()){
       console.log( "You want the", inventory[i].name);
     }
 }
@@ -37,7 +37,7 @@ console.log('in searchColor');
 selectedColor = document.getElementById( 'colorIn' ).value;
 var results = [];
 for ( var i =0; i<inventory.length; i++ ) {
-  if( inventory[ i ].color == selectedColor) {
+  if( inventory[ i ].color.toUpperCase() == selectedColor.toUpperCase()) {
     results.push(inventory[ i ] );
   }
 }
@@ -49,7 +49,7 @@ console.log('in searchSize');
 selectedSize = document.getElementById( 'sizeIn' ).value;
 var results = [];
 for ( var i =0; i<inventory.length; i++ ) {
-  if( inventory[ i ].size == selectedSize) {
+  if( inventory[ i ].size.toUpperCase() == selectedSize.toUpperCase()) {
     results.push(inventory[ i ] );
   }
 }
@@ -61,12 +61,21 @@ console.log('in searchName');
 selectedName = document.getElementById( 'nameIn' ).value;
 var results = [];
 for ( var i =0; i<inventory.length; i++ ) {
-  if( inventory[ i ].name == selectedName) {
+  if( inventory[ i ].name.toUpperCase() == selectedName.toUpperCase()) {
     results.push(inventory[ i ] );
   }
 }
   console.log( "We have "+ results.length + "  " + selectedName +".");
 };//end searchName
+
+var userItem = function () {
+console.log("inside the userItem");
+var userColor = document.getElementById('colorInput').value;
+var userName = document.getElementById("nameInput").value;
+var userSize = document.getElementById('sizeInput').value;
+addItem( userColor, userName , userSize);
+console.log(inventory);
+  };// end submitItem
 
 // addItem section
 addItem( 'blue', 'Smurf', 'Small' );
