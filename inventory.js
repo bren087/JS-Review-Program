@@ -4,6 +4,7 @@ console.log("Inventory.js is sourced");
 var inventory = [];
 var selectedColor = 'none';
 var selectedSize = 'none';
+var selectedName = 'none';
 
 
 var addItem = function(color, name, size){
@@ -30,6 +31,32 @@ var searchInventory= function(){
     }
 }
 };  //end searchInventory
+
+var searchColor = function(){
+console.log('in searchColor');
+selectedColor = document.getElementById( 'colorIn' ).value;
+var results = [];
+for ( var i =0; i<inventory.length; i++ ) {
+  if( inventory[ i ].color == selectedColor) {
+    results.push(inventory[ i ] );
+  }
+}
+  console.log( "We have "+ results.length + " items that are " + selectedColor +".");
+};//end searchColor
+
+var searchSize = function(){
+console.log('in searchSize');
+selectedSize = document.getElementById( 'sizeIn' ).value;
+var results = [];
+for ( var i =0; i<inventory.length; i++ ) {
+  if( inventory[ i ].size == selectedSize) {
+    results.push(inventory[ i ] );
+  }
+}
+  console.log( "We have "+ results.length + " items that are " + selectedSize +".");
+};//end searchSize
+
+// addItem section
 addItem( 'blue', 'Smurf', 'Small' );
 addItem( 'mermaid treasure', 'Prime Academy', 'Large');
 addItem('bus seat green', 'Baby Banner', 'Medium');
