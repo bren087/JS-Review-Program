@@ -56,6 +56,18 @@ for ( var i =0; i<inventory.length; i++ ) {
   console.log( "We have "+ results.length + " items that are " + selectedSize +".");
 };//end searchSize
 
+var searchName = function(){
+console.log('in searchName');
+selectedName = document.getElementById( 'nameIn' ).value;
+var results = [];
+for ( var i =0; i<inventory.length; i++ ) {
+  if( inventory[ i ].name == selectedName) {
+    results.push(inventory[ i ] );
+  }
+}
+  console.log( "We have "+ results.length + "  " + selectedName +".");
+};//end searchName
+
 // addItem section
 addItem( 'blue', 'Smurf', 'Small' );
 addItem( 'mermaid treasure', 'Prime Academy', 'Large');
