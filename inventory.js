@@ -71,8 +71,22 @@ for ( var i =0; i<inventory.length; i++ ) {
 var userItem = function () {
 console.log("inside the userItem");
 var userColor = document.getElementById('colorInput').value;
+var sel = document.getElementById('colorIn');
+var opt = document.createElement('option');
+opt.innerHTML = userColor;
+sel.appendChild(opt);
+//end color
 var userName = document.getElementById("nameInput").value;
+ sel = document.getElementById('nameIn');
+ opt = document.createElement('option');
+opt.innerHTML = userName;
+sel.appendChild(opt);
+//end name
 var userSize = document.getElementById('sizeInput').value;
+ sel = document.getElementById('sizeIn');
+ opt = document.createElement('option');
+opt.innerHTML = userSize;
+sel.appendChild(opt);
 addItem( userColor, userName , userSize);
 console.log(inventory);
   };// end submitItem
